@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d9b5407c9cf4c458c78e8f4d0a2f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 0.5119442, g: 0.03671235, b: 0.5188679, a: 1}
+  baseColor: {r: 0.5119442, g: 0.03671235, b: 0.5188679, a: 0.36862746}
 --- !u!135 &778925736
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1845,7 +1845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d9b5407c9cf4c458c78e8f4d0a2f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 0.37834418, g: 0.13915095, b: 0.5, a: 1}
+  baseColor: {r: 0.37834418, g: 0.13915095, b: 0.5, a: 0.84313726}
 --- !u!135 &1939967716
 SphereCollider:
   m_ObjectHideFlags: 0
