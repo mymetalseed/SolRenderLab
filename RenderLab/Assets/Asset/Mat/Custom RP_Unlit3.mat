@@ -8,18 +8,27 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Custom RP_Unlit3
-  m_Shader: {fileID: 4800000, guid: 1a08bb90d6ef32246b2b53a2e1488289, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3c969719be075f44eb6cc4195de3fd78, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
-    m_Floats: []
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Clipping: 0
+    - _Cutoff: 0.463
+    - _DstBlend: 0
+    - _SrcBlend: 1
+    - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.94509804, g: 0.15686274, b: 0.77791446, a: 1}
+    - _BaseColor: {r: 1, g: 0.9198113, b: 0.9198113, a: 1}
   m_BuildTextureStacks: []
