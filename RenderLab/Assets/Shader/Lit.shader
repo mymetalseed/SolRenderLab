@@ -11,7 +11,9 @@ Shader "Custom RP/Lit"{
 		_Smoothness ("Smoothness",Range(0,1)) = 0.5
 		[Toggle(_PREMULTIPLY_ALPHA)] _PremulAlpha ("Premultiply Alpha", Float) = 0
 	}
-
+	
+	CustomEditor "CustomShaderGUI"
+	
 	SubShader{
 		Pass{
 			Tags{
