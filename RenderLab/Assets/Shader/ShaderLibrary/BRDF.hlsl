@@ -16,12 +16,15 @@ struct BRDF
     float roughness;
 };
 
-BRDF GetBRDF(Surface surface)
+BRDF GetBRDF(Surface surface, bool applyAlphaToDiffuse = false)
 {
     float perceptualRoughness  = PerceptualSmoothnessToPerceptualRoughness(surface.smoothness);
     
     BRDF brdf;
     brdf.diffuse = surface.color * OneMinusReflectivity(surface.metallic);
+    if (applyAlphaToDiffuse) {
+        brdf.diffuse *= surface.alpha;
+    }
     brdf.specular = lerp(MIN_REFLECTIVITY,surface.color,surface.metallic);
     brdf.roughness = PerceptualRoughnessToRoughness(perceptualRoughness);
     return brdf;

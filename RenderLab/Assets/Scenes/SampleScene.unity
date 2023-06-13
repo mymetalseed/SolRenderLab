@@ -232,6 +232,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.04071733, g: 0.4657757, b: 0.5754717, a: 1}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!1 &610679110
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +344,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.41509432, g: 0.34353697, b: 0.17817728, a: 1}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +473,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.32640618, g: 0.4245283, b: 0.33722317, a: 1}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!135 &724155094
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -576,6 +585,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.5119442, g: 0.03671235, b: 0.5188679, a: 0.36862746}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!135 &778925736
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -685,6 +697,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.5849056, g: 0.37174448, b: 0.11311853, a: 1}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!135 &911363159
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -793,7 +808,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d9b5407c9cf4c458c78e8f4d0a2f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
+  baseColor: {r: 1, g: 0, b: 0, a: 1}
+  alphaCutoff: 0.528
+  metallic: 0
+  smoothness: 0.766
 --- !u!135 &941493659
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -864,7 +882,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941493657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.752, y: 3.81, z: -0.53999996}
+  m_LocalPosition: {x: 0.752, y: 3.81, z: 0.421}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -986,6 +1004,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0, g: 0, b: 0, a: 1}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!135 &1147343258
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1171,6 +1192,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.11359398, g: 0.8584906, b: 0, a: 1}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!1 &1162852944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1304,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.6320754, g: 0.23553754, b: 0.23553754, a: 1}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!1 &1511116423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,6 +1416,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.045701336, g: 0.66658926, b: 0.745283, a: 1}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!1 &1745417871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,7 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: fceb81de608959a458c2e44b50a59bf1, type: 2}
+  material: {fileID: 2100000, guid: 1d4ec5773c2e0974a916fd40acd9c77e, type: 2}
 --- !u!4 &1909648431
 Transform:
   m_ObjectHideFlags: 0
@@ -1704,6 +1734,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.5, g: 0.37102827, b: 0.016509444, a: 1}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!1 &1939495173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,6 +1846,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.7412401, g: 0.0747597, b: 0.754717, a: 1}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!1 &1939967714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +1882,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.37834418, g: 0.13915095, b: 0.5, a: 0.84313726}
+  alphaCutoff: 0.5
+  metallic: 0
+  smoothness: 0.5
 --- !u!135 &1939967716
 SphereCollider:
   m_ObjectHideFlags: 0
