@@ -2,69 +2,65 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Lighting
-{
-    private const string bufferName = "Lighting";
+public class Lighting {
 
-    private static int
+    const string bufferName = "Lighting";
+
+    const int maxDirLightCount = 4;
+
+    static int
         dirLightCountId = Shader.PropertyToID("_DirectionalLightCount"),
         dirLightColorsId = Shader.PropertyToID("_DirectionalLightColors"),
         dirLightDirectionsId = Shader.PropertyToID("_DirectionalLightDirections");
 
-    private static Vector4[]
+    static Vector4[]
         dirLightColors = new Vector4[maxDirLightCount],
         dirLightDirections = new Vector4[maxDirLightCount];
-    
-    private CullingResults cullingResults;
-    private const int maxDirLightCount = 4;
 
-    private CommandBuffer buffer = new CommandBuffer
-    {
+    CommandBuffer buffer = new CommandBuffer {
         name = bufferName
     };
 
-    public void Setup(ScriptableRenderContext context,CullingResults cullingResults)
-    {
-        this.cullingResults = cullingResults; 
+    CullingResults cullingResults;
+    Shadows shadows = new Shadows();
+    public void Setup (
+        ScriptableRenderContext context, CullingResults cullingResults,ShadowSettings shadowSettings
+    ) {
+        this.cullingResults = cullingResults;
         buffer.BeginSample(bufferName);
+        shadows.Setup(context, cullingResults, shadowSettings);
         SetupLights();
+        shadows.Render();
         buffer.EndSample(bufferName);
         context.ExecuteCommandBuffer(buffer);
         buffer.Clear();
     }
-    
-    void SetupLights()
-    {
+
+    void SetupLights () {
         NativeArray<VisibleLight> visibleLights = cullingResults.visibleLights;
-        
-        Light light = RenderSettings.sun;
-        //direct set global value
         int dirLightCount = 0;
-        for (int i = 0; i < visibleLights.Length; ++i)
-        {
+        for (int i = 0; i < visibleLights.Length; i++) {
             VisibleLight visibleLight = visibleLights[i];
-            if (visibleLight.lightType == LightType.Directional)
-            {
-                SetupDirectionalLight(dirLightCount++,ref visibleLight);
-                if(dirLightCount > maxDirLightCount)
+            if (visibleLight.lightType == LightType.Directional) {
+                SetupDirectionalLight(dirLightCount++, ref visibleLight);
+                if (dirLightCount >= maxDirLightCount) {
                     break;
+                }
             }
         }
-        
-        buffer.SetGlobalInt(dirLightCountId,visibleLights.Length);
-        buffer.SetGlobalVectorArray(dirLightColorsId,dirLightColors);
-        buffer.SetGlobalVectorArray(dirLightDirectionsId,dirLightDirections);
+
+        buffer.SetGlobalInt(dirLightCountId, dirLightCount);
+        buffer.SetGlobalVectorArray(dirLightColorsId, dirLightColors);
+        buffer.SetGlobalVectorArray(dirLightDirectionsId, dirLightDirections);
     }
-    
-    /// <summary>
-    /// the VisibleLight struct is rather big.Ideally we retrieve it once
-    /// from native array and don't also pass it as regular argument.
-    /// </summary>
-    /// <param name="index"></param>
-    /// <param name="visibleLight"></param>
-    void SetupDirectionalLight(int index,ref VisibleLight visibleLight)
-    {
+
+    void SetupDirectionalLight (int index, ref VisibleLight visibleLight) {
         dirLightColors[index] = visibleLight.finalColor;
         dirLightDirections[index] = -visibleLight.localToWorldMatrix.GetColumn(2);
+        shadows.ReserveDirectionalShadows(visibleLight.light, index);
+    }
+    
+    public void Cleanup () {
+        shadows.Cleanup();
     }
 }
